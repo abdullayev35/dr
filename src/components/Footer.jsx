@@ -70,7 +70,7 @@ const Footer = () => {
                     size={40}/></Link>
             </div>
         </div>
-        <p>2023 © Hidro-Insaat MMC. {text.all_rights_reserved}</p>
+        <p>2023 © Bariatric MMC. {text.all_rights_reserved}</p>
     </div>);
 };
 
