@@ -11,7 +11,7 @@ import YouTubePlayer from "../components/YoutubePlayer.jsx";
 const AboutPage = () => {
 
 
-    const videoIds = ['e2D7JPDjo3c' ,'vXrhldgH4HA']
+    const videoIds = ['I8D8zpLqpw8' ,'1RkseDeYS9g']
     const text = Lang.getCurrentText()
     const [data, setData] = useState({})
     const [isFetching, setIsFetching] = useState(true)
