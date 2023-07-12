@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500;700&display=swap');
+@import "/node_modules/flag-icons/css/flag-icons.min.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #EBF2FE;
+    color: #040404 !important;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -60px;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.lang-container {
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.lang-container span {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+}
+
+.lang-options {
+    position: absolute;
+    top: 0;
+    gap: 20px;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.lang-options span {
+    cursor: pointer;
+}
+
+.lang-options img {
+    width: 3rem;
+    height: 2rem;
+    margin-right: 1rem;
+}
+
+.lang-container:hover .lang-options {
+    visibility: visible;
+    opacity: 1;
+}
+
+.sidebar-lang {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.sidebar-lang span {
+    cursor: pointer;
+}
+
+
+/*HEADER*/
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+    height: 60px;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.8;
+}
+
+.menu-button {
+    color: #9acc91;
+    display: none;
+    cursor: pointer;
+}
+
+.bg-white {
+    background: white !important;
+    opacity: 1;
+}
+
+.bg-white .lang-options {
+    background: white;
+}
+
+.logo {
+    height: 100%;
+    padding-top: 2px;
+}
+
+.navigation {
+    height: 100%;
+    line-height: 60px;
+}
+
+.navigation .links {
+    display: flex;
+}
+
+.navigation a {
+    padding: 17px 20px;
+    text-decoration: none;
+    color: #040404;
+    position: relative;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 5px;
+    left: 50%;
+    bottom: 0;
+    background-color: #9acc91;
+    transition: all ease-in-out .2s;
+}
+
+.navigation a:hover{
+}
+
+.navigation a:hover::after,
+.navigation a.active-link::after {
+    width: 100%;
+    left: 0;
+}
+
+/*.servicePage .navbar, .newsPage .navbar, .safetyPage .navbar, .careerPage .navbar {*/
+/*    background: white;*/
+/*}*/
+
+/*.servicePage .navbar a, .newsPage .navbar a, .safetyPage .navbar a, .careerPage .navbar a {*/
+/*    color: black;*/
+/*}*/
+
+.bariatricPage-header {
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    align-items: center;
+    line-height: 140px;
+    font-size: clamp(1.75rem, 0.75rem + 2.3045vw, 3.5rem);
+    font-weight: 700;
+    color: white;
+}
+
+/*SIDEBAR*/
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    padding: 20px 0;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.5s ease-out;
+    text-decoration: none;
+    color: #040404;
+}
+
+.sidebar-menu .tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 60px 0 0 0;
+}
+
+.sidebar-menu .tabs li {
+    cursor: pointer;
+    color: #040404;
+    padding: 10px;
+    font-weight: 300;
+    border-bottom: 1px solid #9acc91;
+}
+
+.sidebar-menu .tabs a {
+    cursor: pointer;
+    color: #040404;
+    padding: 10px 30px;
+    font-weight: 300;
+    border-bottom: 1px solid #9acc91;
+}
+
+.sidebar-menu .tabs a:last-child {
+    border-bottom: none;
+}
+
+.sidebar-menu.open {
+    right: 0;
+}
+
+.sidebar-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    padding: 5px;
+    color: #9acc91;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-lang span{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+
+/*FOOTER*/
+.footer {
+    position: relative;
+    background: white;
+    padding: 60px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.footer p {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    opacity: 1;
+    color: #040404;
+}
+
+.footer img {
+    margin-top: 6px;
+    max-height: 100px;
+}
+
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-contacts h3 {
+    margin-bottom: 10px;
+    color: #040404 ;
+}
+
+.footer-contacts div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+}
+
+.footer-contacts a {
+    transition: all .4s ease-in-out;
+    color: #595955 ;
+}
+
+.footer-contacts a:hover {
+    color: #040404;
+}
+
+.footer-contacts svg {
+    color: #9acc91;
+    font-size: 24px;
+}
+
+.footer .icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.footer div {
+    margin-bottom: 10px;
+}
+
+.footer .icons a {
+    width: fit-content;
+    height: fit-content;
+    transition: all 500ms;
+}
+
+.footer .icons a:hover {
+    transform: scale(1.2);
+}
+
+.fb {
+    color: #4267B2;
+}
+
+.linkedin {
+    color: #0077b5;
+}
+
+.instagram {
+    color: #E4405F;
+}
+
+.youtube {
+    color: #FF0000;
+}
+
+.footer .social-icons, .sidebar-icons {
+    text-align: center;
+}
+
+.footer .social-icons .title, .sidebar-icons .title {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: #040404;
+    font-weight: 700;
+}
+
+.phones {
+    margin-bottom: 0 !important;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 1200px) {
+    .header nav, .footer {
+        padding: 0 20px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+        padding: 14px 20px 20px;
+    }
+
+    .footer img {
+        max-height: 70px;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .header .navigation {
+        display: none;
+    }
+
+    .menu-button {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+
+    .bariatricPage-header{
+        height: 100px;
+        line-height: 100px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+}
