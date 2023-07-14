@@ -1,0 +1,169 @@
+.surgery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 40px auto 0;
+    background-color: #EBF2FE;
+    width: 100%;
+}
+
+.surgery{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 360px;
+    overflow: hidden;
+}
+
+.surgery-img{
+    min-width: 40%;
+    height: 40%;
+    overflow: hidden;
+}
+
+.surgery-section{
+    background: url("/src/assets/images/bg.svg");
+    background-repeat: no-repeat;
+}
+
+.surgery-img img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all .4s;
+}
+
+.accordion-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    text-align: left;
+}
+
+.accordion{
+    width: 40%;
+    border: none !important;
+}
+
+.accordion__button{
+    background: #5A9367 !important;
+    color: white !important;
+    font-weight: 600;
+}
+
+.surgery-content{
+    border: 1px solid #e3e1e1;
+    border-top: none;
+    color: #12263e;
+    text-align: left;
+    padding: 16px 24px;
+    transition: all .4s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.surgery-text{
+    transition: all .4s;
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: break-spaces;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.surgery-title{
+    color: #031a3a;
+    font-size: clamp(1rem,1rem + .3292vw,1.25rem);
+    font-weight: 600;
+    line-height: clamp(1.375rem,1.3421rem + .1646vw,1.5rem);
+    transition: all .4s;
+    margin-bottom: 10px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.surgery-footer{
+    margin-top: 20px;
+    align-items: center;
+    display: flex;
+    transition: all .4s;
+    justify-content: space-between;
+}
+
+.surgery-footer a{
+    align-items: center;
+    column-gap: 14px;
+    display: flex;
+}
+
+.surgery-footer svg{
+    color: #3482B5;
+    transition: all .4s;
+}
+
+.surgery-date{
+    color: #32549E;
+    font-size: 14px;
+    line-height: 18px;
+    transition: all .4s;
+}
+
+.surgery-btn{
+    font-weight: 500;
+    background: #5A9367;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 5px;
+    transition: all 300ms;
+}
+
+.surgery-btn:hover{
+    background: #32549E;
+}
+
+.surgery:hover .surgery-content{
+    background-color: #5A9367;
+}
+
+.surgery:hover .surgery-img img{
+    transform: scale(1.2);
+}
+
+ .surgery:hover .surgery-footer .surgery-date,  .surgery:hover .surgery-text{
+    color: white;
+}
+
+.surgery:hover .surgery-footer a svg, .surgery:hover .surgery-title{
+    color: #34DC87;
+}
+
+@media screen and (max-width: 500px) {
+
+    .surgery{
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .surgery-container{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .accordion-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accordion{
+        width: 90%;
+    }
+}
